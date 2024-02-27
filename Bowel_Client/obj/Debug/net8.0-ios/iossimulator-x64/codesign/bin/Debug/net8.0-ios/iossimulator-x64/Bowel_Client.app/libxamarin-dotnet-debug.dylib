@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - /Users/paulmatlock/Development/Projects/Bowel_Client/Bowel_Client/bin/Debug/net8.0-ios/iossimulator-x64/Bowel_Client.app/libxamarin-dotnet-debug.dylib

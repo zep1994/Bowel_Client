@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Bowel_Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+eacfda7bf50f13e56b53a3cb5d3e76e67f79a297")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+b8247c770d512c9fa86389544db9117b414ec581")]
 [assembly: System.Reflection.AssemblyProductAttribute("Bowel_Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Bowel_Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

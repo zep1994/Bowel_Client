@@ -1,0 +1,1 @@
+-v --force --timestamp=none --sign - --entitlements /Users/paulmatlock/Development/Projects/Bowel_Client/Bowel_Client/obj/Debug/net8.0-maccatalyst/maccatalyst-x64/Entitlements.xcent /Users/paulmatlock/Development/Projects/Bowel_Client/Bowel_Client/bin/Debug/net8.0-maccatalyst/maccatalyst-x64/Bowel_Client.app

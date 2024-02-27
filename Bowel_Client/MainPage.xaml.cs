@@ -1,24 +1,42 @@
-﻿namespace Bowel_Client;
+﻿using System.ComponentModel;
+using Newtonsoft.Json;
 
-public partial class MainPage : ContentPage
+namespace Bowel_Client
 {
-	int count = 0;
+    public partial class MainPage : ContentPage, INotifyPropertyChanged
+    {
+        private string? _result;
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+        public string Result
+        {
+            get { return _result; }
+            set
+            {
+                _result = value;
+                OnPropertyChanged(nameof(Result));
+            }
+        }
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+        public MainPage()
+        {
+            InitializeComponent();
+            BindingContext = this;
+        }
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+        private async void OnButtonClicked(object sender, EventArgs e)
+        {
+            var client = new HttpClient();
+            var response = await client.GetAsync("http://localhost:5000/api/values");
+            var content = await response.Content.ReadAsStringAsync();
+            var values = JsonConvert.DeserializeObject<List<string>>(content);
+            Result = string.Join(", ", values);
+        }
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+    }
 }
-
